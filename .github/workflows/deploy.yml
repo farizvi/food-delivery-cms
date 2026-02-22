@@ -34,6 +34,11 @@ jobs:
           cd dist
           zip -r function.zip .
 
+      - name: Debug GitHub Context
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Ref: $GITHUB_REF"          
+
       - name: Configure AWS Credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
